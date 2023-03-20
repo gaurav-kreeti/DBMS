@@ -1,3 +1,5 @@
+--USING PostgreSQL--
+--1 Create The Schema--
 create table jobs(
   job_id SERIAL,
   job_title VARCHAR(255),
@@ -66,6 +68,7 @@ create table dependents(
   FOREIGN KEY(employee_id) REFERENCES employees(employee_id)
 );
 
+--2 Inserting Values--
 INSERT INTO jobs (job_title,min_salary,max_salary) VALUES ('Software Engineer',15000,100000);
 INSERT INTO jobs (job_title,min_salary,max_salary) VALUES ('Quality Analyst',10000,50000);
 INSERT INTO jobs (job_title,min_salary,max_salary) VALUES ('Product Manager',20000,150000);
@@ -107,6 +110,7 @@ INSERT INTO employees (first_name,last_name,email,phone_number,hire_date,job_id,
 INSERT INTO employees (first_name,last_name,email,phone_number,hire_date,job_id,salary,manager_id,department_id) VALUES ('steve','jobs','steve.jobs@mail.com','7003067883','2022-08-01',3,50000,4,4);
 INSERT INTO employees (first_name,last_name,email,phone_number,hire_date,job_id,salary,manager_id,department_id) VALUES ('alex','Neugen','alex.neugen@mail.com','9123088822','2022-07-01',4,90000,5,5);
 
+--3 Alter Table--
 ALTER table departments ADD COLUMN manager_name VARCHAR(255);
 
 ALTER table jobs DROP COLUMN max_salary;
