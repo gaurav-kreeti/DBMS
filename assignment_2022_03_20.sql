@@ -1,6 +1,6 @@
 --Using PostgreSQL--
 --1. Select all records in table“Employees”whose lastname starts with‘Sah’
-Select * from employees where last_name like 'Sah';
+Select * from employees where last_name like 'Sah%';
 
 --2. Select 10 employees who were hired between 1stJune,2021 to 15th February, 2022.
 -- Start retrieving from the 4th record in the table
